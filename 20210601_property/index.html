@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>目標管理No.2(2) - 講座No6</title>
+</head>
+<body>
+    <div id="app">
+        <!-- methodとcomputed -->
+        <div v-for="i in 3" :key="i">
+            <p>{{ i }}回目</p>
+            <p>Method: {{ useMethods() }}</p>
+            <p>Computed: {{ useComputed }}</p>
+        </div>
+
+        <!-- watch -->
+        <button @click="message='goodbye'">click me</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
