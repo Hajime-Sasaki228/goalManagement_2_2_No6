@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>目標管理No.2(2) - 講座No6</title>
+</head>
+<body>
+    <div id="app">
+        <h3>Colors</h3>
+        <ul>
+            <li v-for="color in colors">
+                {{ color }}
+            </li>
+        </ul>
+        <table style="text-align: center;">
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>User Age</th>
+            </tr>
+            <tr v-for="user in users" :key="user.id">
+                <td>
+                    {{ user.id}}
+                </td>
+                <td>
+                    {{ user.name}}
+                </td>
+                <td>
+                    {{ user.age }}
+                </td>
+            </tr>
+        </table>
+
+        <h3>Use methods</h3>
+        <p>{{ message }}, World!</p>
+        <button @click="getMessage">Get new message</button>
+        <h3>Change message</h3>
+        <button @click="changeMessage($event, 'OK')">Change message</button>
+        <hr />
+
+        <h3>双方向バインディング</h3>
+        <label>Input: {{ input_text }}</label>
+        <form>
+            <div>
+                <input v-model="input_text" placeholder="hogehoge">
+            </div>
+            <div>
+                <select v-model="selected">
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
+            </div>
+            <p>You selected: {{ selected }}.</p>
+            <div>
+                <input type="checkbox" v-model="checked">
+                <label for="checkbox">{{ checked }}</label>
+            </div>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
